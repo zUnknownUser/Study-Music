@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"os" // Tambem usada pra inserir sons nos codigos
 	"time"
 	"github.com/fatih/color"
 )
