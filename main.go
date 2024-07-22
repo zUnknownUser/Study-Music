@@ -4,51 +4,47 @@ import (
 	"fmt"
 	"os"
 	"time"
+	"github.com/fatih/color"
 )
 
 func main(){
-	fmt.Println("Seja bem ao Study Music. Aplicativo feito para o seu desenvolvimento pessoal, musical. Um simples aplicativo de erro e acerto.")	
-	introducao()
-	
+	black := color.New(color.FgBlack).Add(color.Bold)
+	black.Println("Seja bem ao Study Music. Aplicativo feito para o seu desenvolvimento pessoal, musical. Um simples aplicativo de erro e acerto.")	
+	introducao()	
+	// Scale()	
 }
 
-// func VerificandoNocao(){
-// 	var perguntaUser string
-// 	fmt.Print("Você teve contato com algum tipo de aplicação como esse?")
-// 	fmt.Scan(&perguntaUser)
-
-// 	if perguntaUser == "Sim" {
-//         fmt.Println("Ótimo... Estamos validando sua informação. E seguiremos adiante. Espero que possa aproveitar e aprimorar seus conhecimentos")
-// 	} else  {
-// 		fmt.Println("Certo, esperamos que sua primeira experiência seja boa! Aproveite.")
-// 	}
-	
-// 	introducao()
-// }
 
 func introducao(){
-	fmt.Println("1- Escalas")
-	fmt.Println("2- Campo Harmônico")
-	fmt.Println("3- Escala Menores")
-	fmt.Println("4- Escalas Maiores")
-	fmt.Println("5- Escala Pentatônica")
-	fmt.Println("0- Pressione 0 para Sair")
+	black := color.New(color.FgBlack).Add(color.Bold)
+	black.Println("1- Escalas") //Criar essa função primeiro
+	black.Println("2- Campo Harmônico")
+	black.Println("3- Escala Menores")
+	black.Println("4- Escalas Maiores")
+	black.Println("5- Escala Pentatônica")
+	black.Println("0- Pressione 0 para Sair")
 
 	var escolhaUser int
-	fmt.Println("Qual você deseja acessar?")
+	black.Println("Qual você deseja acessar?")
 	fmt.Scanf("%d", &escolhaUser)
 
 	switch escolhaUser{
 	case 1:
-		fmt.Print("1- Inicializando Quiz sobre Escalas...")
+		fmt.Println("1- Inicializando Quiz sobre Escalas...")
+		Scale()
+		time.Sleep(2* time.Second)
 	case 2:
-		fmt.Print("2- Inicializando Quiz Campo Harmônico...")
+		fmt.Println("2- Inicializando Quiz Campo Harmônico...") // Substituir isso pela função ( A criar )
+		time.Sleep(2* time.Second)
 	case 3:
-		fmt.Print("3- Inicializando Quiz sobre Escalas Menores...")
+		fmt.Println("3- Inicializando Quiz sobre Escalas Menores...") // Substituir isso pela função ( A criar )
+		time.Sleep(2* time.Second)
 	case 4:
-		fmt.Print("4- Inicializando Quiz sobre Escalas Maiores...")
+		fmt.Println("4- Inicializando Quiz sobre Escalas Maiores...") // Substituir isso pela função ( A criar )
+		time.Sleep(2* time.Second)
 		case 5:
-		fmt.Print("5- Inicializando Quiz sobre Escala Pentatônica...")
+		fmt.Println("5- Inicializando Quiz sobre Escala Pentatônica...") // Substituir isso pela função ( A criar )
+		time.Sleep(2* time.Second)
 		case 0:
 			fmt.Println("0 - Saindo do Aplicação...")
 			time.Sleep(2* time.Second)
@@ -57,5 +53,37 @@ func introducao(){
 			fmt.Println("Comando não reconhecido ")	
 			os.Exit(-1)
 	}
+}
 
+
+func Scale(){
+
+	fmt.Println("Sabemos que Escala musical nada mais é do que uma sequência de notas de nomes diferentes organizadas dentro de uma mesma oitava, separadas por intervalos musicais.")
+	fmt.Println("Nesse modo, trabalharemos com as escalas maiores e menores, de forma sortida.")
+	fmt.Println("Sabendo que existem 8 notas naturais, sendo elas : C - D - E - F - G - A - B - C")
+
+	fmt.Println("Por qual nota você gostaria de começar?")
+
+	var user_escolhe_nota string
+	fmt.Scan(&user_escolhe_nota)
+
+	switch user_escolhe_nota{
+	case "C":
+		fmt.Println("Começaremos com Dó...") // Substituir isso pela função ( A criar)
+	case "D":
+		fmt.Println("Começaremos com Ré...") // Substituir isso pela função ( A criar)
+	case "E":
+		fmt.Println("Começaremos com Mi...") // Substituir isso pela função ( A criar)
+	case "F":
+		fmt.Println("Começaremos com Fá...") // Substituir isso pela função ( A criar)
+	case "G":
+		fmt.Println("Começaremos com Sol...") // Substituir isso pela função ( A criar)
+	case "A":
+		fmt.Println("Começaremos com Lá...") // Substituir isso pela função ( A criar)
+	case "B":
+		fmt.Println("Começaremos com Si...") // Substituir isso pela função ( A criar)
+	default:
+		fmt.Println("Ops... Não reconheci essa nota... Tente novamente")
+		os.Exit(0)
+	}	
 }
