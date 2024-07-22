@@ -16,7 +16,7 @@ func main(){
 
 
 func introducao(){
-	black := color.New(color.FgBlack).Add(color.Bold)
+	black := color.New(color.FgBlack).Add(color.Bold) // 
 	black.Println("1- Escalas") //Criar essa função primeiro
 	black.Println("2- Campo Harmônico")
 	black.Println("3- Escala Menores")
@@ -69,7 +69,7 @@ func Scale(){
 
 	switch user_escolhe_nota{
 	case "C":
-		fmt.Println("Começaremos com Dó...") // Substituir isso pela função ( A criar)
+		C()// Terminar de fazer a função ( A criar)
 	case "D":
 		fmt.Println("Começaremos com Ré...") // Substituir isso pela função ( A criar)
 	case "E":
@@ -86,4 +86,21 @@ func Scale(){
 		fmt.Println("Ops... Não reconheci essa nota... Tente novamente")
 		os.Exit(0)
 	}	
+}
+
+func C() {
+	
+	fmt.Println("Qual é o quinto grau de C?")
+
+	var chooseC string
+	fmt.Scan(&chooseC)
+
+	if chooseC == "G" {
+		fmt.Println("Você acertou!!")
+		time.Sleep(1* time.Second)		
+	} else  {
+		fmt.Println("Oh, parece que essa resposta não está certa :(")
+		os.Exit(-0)
+	}
+
 }
